@@ -26,16 +26,7 @@ const Navbar = () => {
   return (
     <div css={navbarContainerCss}>
       <div css={navbarCss}>
-        <Image
-          styleCss={{ height: '100%' }}
-          url={`${process.env.PUBLIC_URL}/images/navbar-logo.png`}
-        />
-        <div>
-          <Image
-            styleCss={{ height: '40px' }}
-            url={`${process.env.PUBLIC_URL}/images/pokeball.png`}
-          />
-        </div>
+        <h2>PokemonApp</h2>
       </div>
     </div>
   );

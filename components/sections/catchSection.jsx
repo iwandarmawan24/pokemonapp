@@ -38,6 +38,7 @@ const Catch = ({ data }) => {
   const { pokemons } = data;
   const { results } = pokemons;
 
+  const [display, setDisplay] = useState('grid');
   const [refreshFetch, setRefreshFetch] = useState(false);
   const [listPokeMonCatch, setListPokemonCatch] = useState(results);
   const [currentPokemonDisplay, setCurrentPokemonDisplay] = useState(null);
@@ -92,91 +93,9 @@ const Catch = ({ data }) => {
       animate={{ opacity: 1 }}
       transition={{ delay: 0.5 }}
       css={{
-        overflow:'hidden'
+        overflow: 'hidden',
       }}
     >
-      {listPokeMonCatch && listPokeMonCatch.length > 0 ? (
-        <div
-          css={{
-            display: 'flex',
-            flexDirection: 'row',
-            flexWrap: 'wrap',
-            justifyContent: 'space-around',
-            height: '350px',
-          }}
-        >
-          {!refreshFetch ? (
-            <Swiper
-              effect={'cards'}
-              grabCursor={true}
-              className="mySwiper"
-              // autoplay={{ delay: 3000, disableOnInteraction: false }}
-              onSlideChange={(e) =>
-                setCurrentPokemonDisplay(results[e.activeIndex])
-              }
-              onSwiper={(swiper) => console.log(swiper)}
-            >
-              {listPokeMonCatch.map((data) => {
-                const searchByName = state?.pokemon.filter(
-                  (item) => item.name === data.name
-                );
-                return (
-                  <SwiperSlide key={data.name}>
-                    {({ isActive }) => (
-                      <div
-                        css={{
-                          display: 'flex',
-                          flexDirection: 'column',
-                          alignItems: 'center',
-                        }}
-                      >
-                        <div
-                          css={{
-                            width: '100%',
-                            height: '100%',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            animation: `${
-                              isActive ? bounceAnimation : ''
-                            } 1.5s ease infinite`,
-                          }}
-                        >
-                          <Image
-                            url={data.image}
-                            styleCss={{ height: '200px' }}
-                          />
-                        </div>
-                        <p
-                          css={{
-                            fontSize: '12px',
-                            whiteSpace: 'pre-wrap',
-                            textTransform: 'capitalize',
-                          }}
-                        >
-                          {data.name.replace(/-/g, ' ')}
-                        </p>
-                        <p
-                          css={{
-                            fontSize: '12px',
-                          }}
-                        >
-                          owned: {searchByName.length}
-                        </p>
-                      </div>
-                    )}
-                  </SwiperSlide>
-                );
-              })}{' '}
-            </Swiper>
-          ) : (
-            <SolarSystemLoading />
-          )}
-        </div>
-      ) : (
-        ''
-      )}
       <div
         css={{
           display: 'flex',
@@ -185,9 +104,178 @@ const Catch = ({ data }) => {
         }}
       >
         <Button
-          text={'Look This Pokemon Details'}
-          onClick={() => catchPokemonClick()}
+          text={'Grid Layout'}
+          onClick={() => setDisplay('grid')}
         ></Button>
+        <Button text={'Swipe'} onClick={() => setDisplay('swipe')}></Button>
+      </div>
+      {display === 'grid' ? (
+        <div
+          css={{
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            width: '100%',
+            flexWrap: 'wrap',
+          }}
+        >
+          {listPokeMonCatch.map((data) => {
+            const searchByName = state?.pokemon.filter(
+              (item) => item.name === data.name
+            );
+            return (
+              <div
+                css={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  width: '48%',
+                  padding: '10px',
+                  border: '1px solid black',
+                  borderRadius: '20px',
+                  marginBottom: '10px',
+                }}
+                key={data.name}
+                onClick={() => router.push(`/detail/${data.name}`)}
+              >
+                <div
+                  css={{
+                    width: '100%',
+                    height: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                  }}
+                >
+                  <Image url={data.image} styleCss={{ height: '100px' }} />
+                </div>
+                <p
+                  css={{
+                    fontSize: '12px',
+                    whiteSpace: 'pre-wrap',
+                    textTransform: 'capitalize',
+                  }}
+                >
+                  {data.name.replace(/-/g, ' ')}
+                </p>
+                <p
+                  css={{
+                    fontSize: '12px',
+                  }}
+                >
+                  owned: {searchByName.length}
+                </p>
+              </div>
+            );
+          })}{' '}
+        </div>
+      ) : (
+        <>
+          {listPokeMonCatch && listPokeMonCatch.length > 0 ? (
+            <div
+              css={{
+                display: 'flex',
+                flexDirection: 'row',
+                flexWrap: 'wrap',
+                justifyContent: 'space-around',
+                height: '350px',
+              }}
+            >
+              {!refreshFetch ? (
+                <Swiper
+                  effect={'cards'}
+                  grabCursor={true}
+                  className="mySwiper"
+                  // autoplay={{ delay: 3000, disableOnInteraction: false }}
+                  onSlideChange={(e) =>
+                    setCurrentPokemonDisplay(results[e.activeIndex])
+                  }
+                  onSwiper={(swiper) => console.log(swiper)}
+                >
+                  {listPokeMonCatch.map((data) => {
+                    const searchByName = state?.pokemon.filter(
+                      (item) => item.name === data.name
+                    );
+                    return (
+                      <SwiperSlide key={data.name}>
+                        {({ isActive }) => (
+                          <div
+                            css={{
+                              display: 'flex',
+                              flexDirection: 'column',
+                              alignItems: 'center',
+                            }}
+                          >
+                            <div
+                              css={{
+                                width: '100%',
+                                height: '100%',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                animation: `${
+                                  isActive ? bounceAnimation : ''
+                                } 1.5s ease infinite`,
+                              }}
+                            >
+                              <Image
+                                url={data.image}
+                                styleCss={{ height: '200px' }}
+                              />
+                            </div>
+                            <p
+                              css={{
+                                fontSize: '12px',
+                                whiteSpace: 'pre-wrap',
+                                textTransform: 'capitalize',
+                              }}
+                            >
+                              {data.name.replace(/-/g, ' ')}
+                            </p>
+                            <p
+                              css={{
+                                fontSize: '12px',
+                              }}
+                            >
+                              owned: {searchByName.length}
+                            </p>
+                          </div>
+                        )}
+                      </SwiperSlide>
+                    );
+                  })}{' '}
+                </Swiper>
+              ) : (
+                <SolarSystemLoading />
+              )}
+            </div>
+          ) : (
+            ''
+          )}
+          <div
+            css={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+            }}
+          >
+            <Button
+              text={'Look This Pokemon Details'}
+              onClick={() => catchPokemonClick()}
+            ></Button>
+          </div>
+        </>
+      )}
+
+      <div
+        css={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}
+      >
         <Button
           text={'Refresh The Cards'}
           onClick={() => refreshCatchList()}
