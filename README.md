@@ -22,7 +22,6 @@ build with
     
  -   Swiper Js Carousel library
     
- -   Framer in Motion
 
 **Endpoint** : Pokemon API (https://graphql-pokeapi.vercel.app/)
 
@@ -56,8 +55,3 @@ in this page you can see your collection and remove the collection you want just
 
 ![enter image description here](https://lh3.googleusercontent.com/njiUoFLAG2NcoeEJrp5Hv9wqHAiZYPnk3_0oZbErOsf4DUmU7s4ixCInqMP-lrdNlDY-3wDwjLolMdrsj55FJTz1fXbAwEmv11XJNmNmEO042N588d5Cu2zwPSgxDSGw1ad-xheav9JhuIbFjL53Rse37skJltnU_WgxODAuYFDymhH69p_xd6qqx_KvysjgQcpguwFJWam5NYfuulTOR6QwNbhDOPwLI1SPQ4QsTULXHuGUFsoHGKThTw42G7dcnWhGfZPPz7GORNYo24DHic1h0ies-To8hDVXxGaTIo6p9RFTeEh4T6Eav273_GkVd5zFO5VEW3LLbuAagmGKsgNM0nog-oAhhjo_AsfBlMoAfoaHDBW7Paepi--OzpSoacgWYnf9OlLF6KcC2LHRMiZO_jWkmaI5hcFWBzFrj32VbyK0SSxViLq40uqYAwfbHdOflF4vCWeaboy9SNIpUSBrfIaX6YjMJIa9rTWqcxaxomfj04FJU207NWFtnbUjG4uLvku4jaFQAA0PdgoOZW-EKY_1JDRnnWnbEwPBVwwWNrqYHQaj9enlTZthG_yovDu315dVX6cLpuH--4Rz_QdKFuf7s_oipnrzZouvz8hUeQuvfrDlyHZpFrdvFHh9SDev23qlcFRTZqYa0w_dYFrZ5_RYD-GD5JvWsAzJ9pNAjfplV4Qp3msIkrxSnFiVZkitSX0_I6X6xr1eQJ0oX7AU=w508-h635-no?authuser=0)
 
-
-**note :**
-you can catch the same pokemon whether you already have inside your collection but you have to give the different nickname from the one or some you already have in your collection. the app will let you know if you giving your pokemon the same nickname with the text alert.
-
-![enter image description here](https://lh3.googleusercontent.com/_xZCiiavwAw9lzwwDq-MlhCtVCJMNY8L3DCEIs-4zkeEjNemM5nPcUSC3zMKysd1EdWkC_OgVRpRYG1fzoZolmir8srGx33wnPe4c3Qv_C9hHlQSz4whDJqTaXy2hJyefie6MnjRJ6Vh_QpRW_QP9CLsR2qxkktCVHHYqU69ylG8qc5jWdwRTdchVjvhfpqO2qSF0Z5UhOwMJKacH2SI4xYVhLZAtQVO7E2Z3WCkM0VkStOU_iKDtAqt0bA1py7ZV42hLjamLd3_dZ7A-5xw3HQTEL_qq62eK8GOP_xphKjvFlDoFsHB3HIAklgDcRkE6444JyH2iW8rEkYgo30S30mhnaag979PxeRdy9dKdtutvXWTCJuIvVGlkgPhFvohf6pTpNDy8ARgCwX2X5DrY8LZ7xISPuo48u6C48kcrtG7yyFtSOCl7yK60PH0Or8pASOIQ3jcMzvl4nEcKrUyLo6EmkSLIByTvD-0aw0eYyrZrKZj_MOpYY2yDNu5HMdmMiu2V_cgLtCMBr57QKMF2vnP4R3Z9Q9BbI4h1MSssAScPADERc9lfOCq008ObyuvKnP-D3nB_qLL4byvLDx60HG3xNENlOI5lMLUUq8Imo6e0PahZg4JRQZ7Rt214jnxQddJxJH43KyUAJ6_2TTgmRFc-ej3mBB8K-0b--JDFjTTojQ4BDoeWrcZkxoUYrPH2xF1isvi9w9phiKNN6C8DDxg=w254-h313-no?authuser=0)
