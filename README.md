@@ -1,7 +1,7 @@
 
 **PokemonApp**
 
-**See on live on :** [here](https://pedantic-albattani-ccb9a7.netlify.app/) (https://pedantic-albattani-ccb9a7.netlify.app/)
+**See on live on :** [here](https://startling-speculoos-9f7c9c.netlify.app/) (https://startling-speculoos-9f7c9c.netlify.app/)
 
 **How to run in local:**
 
